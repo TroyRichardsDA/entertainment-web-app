@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+
+.section__header {
+  margin: 24px 0;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.3125px;
+}
+
+main {
+  padding: 0 16px;
+}

@@ -1,17 +1,5 @@
 @use "../abstracts/variables" as *;
 
-.trending {
-  margin-top: 24px;
-}
-
-.trending__header {
-  font-size: 20px;
-  margin-bottom: 16px;
-  font-style: normal;
-  line-height: 25px;
-  letter-spacing: -0.3125px;
-}
-
 .trending__slide {
   display: flex;
   overflow-x: scroll;

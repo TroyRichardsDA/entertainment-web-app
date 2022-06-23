@@ -21,7 +21,7 @@ const SearchResults = ({ search }) => {
 
   return (
     <section className="search-results">
-      <h2 className="search-results__header">
+      <h2 className="section__header">
         Found {filteredFilms.length} results for '{search}'
       </h2>
       <div className="search-results__results">{filteredFilms}</div>

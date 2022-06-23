@@ -6,6 +6,7 @@
 
 /* Base */
 @use "./base/body";
+@use "./base/universal";
 
 /* components */
 @use "./components/navbar";
@@ -16,6 +17,3 @@
 @use "./components/ui/Searchbar";
 @use "./components//ui/Film";
 @use "./components/ui/SearchResults";
-
-/* Pages */
-@use "./pages/Home";

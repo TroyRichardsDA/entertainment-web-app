@@ -25,7 +25,7 @@ const Trending = () => {
 
   return (
     <section className="trending">
-      <h2 className="trending__header">Trending</h2>
+      <h2 className="section__header">Trending</h2>
       <div className="trending__slide">{trendingFilms}</div>
     </section>
   );

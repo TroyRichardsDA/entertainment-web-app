@@ -1,17 +1,5 @@
 @use "../abstracts/variables" as *;
 
-.recommended {
-  margin-top: 24px;
-}
-
-.recommended__title {
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: -0.3125px;
-  margin-bottom: 24px;
-}
-
 .recommended__films {
   display: grid;
   grid-template-columns: 1fr 1fr;
