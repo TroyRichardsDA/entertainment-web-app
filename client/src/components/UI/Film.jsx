@@ -3,12 +3,25 @@ import { ReactComponent as MovieIcon } from "../../assets/icon-category-movie.sv
 import { ReactComponent as TVIcon } from "../../assets/icon-category-tv.svg";
 import { ReactComponent as BookmarkFull } from "../../assets/icon-bookmark-full.svg";
 import { ReactComponent as BookmarkEmpty } from "../../assets/icon-bookmark-empty.svg";
+import { useStateContext } from "../../context/ContextProvider";
 
 const Film = (props) => {
+  const { setFilms } = useStateContext();
+
   const { title, year, isTrending, rating, src, isBookmarked, category } =
     props;
 
-  function toggleBookmark() {}
+  function toggleBookmark() {
+    setFilms((prev) =>
+      prev.map((film) => {
+        if (film.title === title) {
+          return { ...film, isBookmarked: !isBookmarked };
+        } else {
+          return film;
+        }
+      })
+    );
+  }
 
   return (
     <div className="film">
@@ -23,12 +36,9 @@ const Film = (props) => {
         className={`film__bookmark--wrapper film__bookmark--wrapper-${
           isTrending ? "t" : "r"
         }`}
+        onClick={toggleBookmark}
       >
-        {isBookmarked ? (
-          <BookmarkFull onClick={toggleBookmark} />
-        ) : (
-          <BookmarkEmpty onClick={toggleBookmark} />
-        )}
+        {isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
       </div>
       <div className={`film__content${isTrending ? "--trending" : ""}`}>
         <div className="film__content--wrapper">

@@ -1,13 +1,11 @@
 import React from "react";
-import data from "../data.json";
-import { ReactComponent as MovieIcon } from "../assets/icon-category-movie.svg";
-import { ReactComponent as TVIcon } from "../assets/icon-category-tv.svg";
-import { ReactComponent as BookmarkFull } from "../assets/icon-bookmark-full.svg";
-import { ReactComponent as BookmarkEmpty } from "../assets/icon-bookmark-empty.svg";
 import { Film } from "./UI";
+import { useStateContext } from "../context/ContextProvider";
 
 const Recommended = () => {
-  const films = data.map((film, ind) => {
+  const { films } = useStateContext();
+
+  const recommendedFilms = films.map((film, ind) => {
     if (!film.isTrending) {
       return (
         <Film
@@ -26,7 +24,7 @@ const Recommended = () => {
   return (
     <section className="recommended">
       <h2 className="recommended__title">Recommended for you</h2>
-      <div className="recommended__films">{films}</div>
+      <div className="recommended__films">{recommendedFilms}</div>
     </section>
   );
 };

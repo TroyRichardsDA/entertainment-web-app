@@ -1,13 +1,11 @@
 import React from "react";
-import data from "../data.json";
-import { ReactComponent as MovieIcon } from "../assets/icon-category-movie.svg";
-import { ReactComponent as TVIcon } from "../assets/icon-category-tv.svg";
-import { ReactComponent as BookmarkFull } from "../assets/icon-bookmark-full.svg";
-import { ReactComponent as BookmarkEmpty } from "../assets/icon-bookmark-empty.svg";
+import { useStateContext } from "../context/ContextProvider";
 import { Film } from "./UI";
 
 const Trending = () => {
-  const movies = data.map((movie, ind) => {
+  const { films } = useStateContext();
+
+  const trendingFilms = films.map((movie, ind) => {
     if (movie.isTrending) {
       return (
         <Film
@@ -28,7 +26,7 @@ const Trending = () => {
   return (
     <section className="trending">
       <h2 className="trending__header">Trending</h2>
-      <div className="trending__slide">{movies}</div>
+      <div className="trending__slide">{trendingFilms}</div>
     </section>
   );
 };
