@@ -16,7 +16,11 @@ const Movies = () => {
         setSearch={setSearch}
         placeholder="Search for movies"
       />
-      <MovieList movies={movies} />
+      {!search ? (
+        <MovieList movies={movies} />
+      ) : (
+        <SearchResults films={movies} search={search} />
+      )}
     </main>
   );
 };
