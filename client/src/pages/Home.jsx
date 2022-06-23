@@ -1,5 +1,5 @@
 import React from "react";
-import { Trending } from "../components";
+import { Recommended, Trending } from "../components";
 import { Searchbar } from "../components/UI";
 
 const Home = () => {
@@ -7,6 +7,7 @@ const Home = () => {
     <main className="home">
       <Searchbar placeholder="Search for movies or TV series" />
       <Trending />
+      <Recommended />
     </main>
   );
 };
