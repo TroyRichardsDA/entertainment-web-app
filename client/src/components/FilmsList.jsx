@@ -1,9 +1,9 @@
 import React from "react";
 import { Film } from "./UI";
 
-const MovieList = (props) => {
-  const { movies } = props;
-  const displayMovies = movies.map((movie, ind) => {
+const FilmsList = (props) => {
+  const { films } = props;
+  const displayFilms = films.map((movie, ind) => {
     return (
       <Film
         title={movie.title}
@@ -17,12 +17,7 @@ const MovieList = (props) => {
     );
   });
 
-  return (
-    <section className="movie-list">
-      <h2 className="section__header"> Movies</h2>
-      <div className="films-display">{displayMovies}</div>
-    </section>
-  );
+  return <div className="films-display">{displayFilms}</div>;
 };
 
-export default MovieList;
+export default FilmsList;

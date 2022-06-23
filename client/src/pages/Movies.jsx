@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import MovieList from "../components/MovieList";
+import { FilmsList } from "../components";
+
 import { Searchbar, SearchResults } from "../components/UI";
 import { useStateContext } from "../context/ContextProvider";
 
@@ -17,7 +18,10 @@ const Movies = () => {
         placeholder="Search for movies"
       />
       {!search ? (
-        <MovieList movies={movies} />
+        <section>
+          <h2 className="section__header"> Movies</h2>
+          <FilmsList films={movies} />
+        </section>
       ) : (
         <SearchResults films={movies} search={search} />
       )}
