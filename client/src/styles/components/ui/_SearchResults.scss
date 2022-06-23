@@ -1,0 +1,15 @@
+@use "../../abstracts/variables" as *;
+
+.search-results__header {
+  margin: 24px 0;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.3125px;
+}
+
+.search-results__results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}

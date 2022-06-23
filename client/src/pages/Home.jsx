@@ -1,13 +1,26 @@
 import React from "react";
+import { useState } from "react";
 import { Recommended, Trending } from "../components";
-import { Searchbar } from "../components/UI";
+import { Searchbar, SearchResults } from "../components/UI";
 
 const Home = () => {
+  const [search, setSearch] = useState("");
+
   return (
     <main className="home">
-      <Searchbar placeholder="Search for movies or TV series" />
-      <Trending />
-      <Recommended />
+      <Searchbar
+        search={search}
+        setSearch={setSearch}
+        placeholder="Search for movies or TV series"
+      />
+      {!search ? (
+        <>
+          <Trending />
+          <Recommended />
+        </>
+      ) : (
+        <SearchResults search={search} />
+      )}
     </main>
   );
 };

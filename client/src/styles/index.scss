@@ -15,6 +15,7 @@
 /* UI */
 @use "./components/ui/Searchbar";
 @use "./components//ui/Film";
+@use "./components/ui/SearchResults";
 
 /* Pages */
 @use "./pages/Home";

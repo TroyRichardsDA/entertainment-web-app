@@ -18,10 +18,9 @@ const Recommended = () => {
           isBookmarked={film.isBookmarked}
           category={film.category}
           key={ind}
-          isTrending={film.isTrending}
         />
       );
-    }
+    } else return null;
   });
 
   return (
