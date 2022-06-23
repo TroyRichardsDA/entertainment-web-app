@@ -3,6 +3,7 @@ import { ReactComponent as MovieIcon } from "../../assets/icon-category-movie.sv
 import { ReactComponent as TVIcon } from "../../assets/icon-category-tv.svg";
 import { ReactComponent as BookmarkFull } from "../../assets/icon-bookmark-full.svg";
 import { ReactComponent as BookmarkEmpty } from "../../assets/icon-bookmark-empty.svg";
+import { ReactComponent as PlayBtn } from "../../assets/icon-play.svg";
 import { useStateContext } from "../../context/ContextProvider";
 
 const Film = (props) => {
@@ -31,6 +32,12 @@ const Film = (props) => {
         }`}
       >
         <img className="film__img" src={src} alt="" />
+        <div className="film__play-btn">
+          <div className="film__play-btn--wrapper">
+            <PlayBtn />
+            <p>Play</p>
+          </div>
+        </div>
       </figure>
       <div
         className={`film__bookmark--wrapper film__bookmark--wrapper-${

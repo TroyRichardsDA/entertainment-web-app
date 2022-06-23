@@ -11,22 +11,22 @@
 }
 
 .searchbar__icon {
-  top: -5px;
-  left: 0;
-
-  transform: scale(0.8);
+  transform: scale(0.8) translateY(-4px);
 }
 
 .searchbar__input {
   width: 257px;
-  height: 24px;
-  padding-left: 16px;
+
+  margin-left: 16px;
+  padding-bottom: 8px;
   font-family: $baseFont;
   font-size: 16px;
   font-weight: 300;
   background-color: transparent;
   color: white;
   border: none;
+  caret-color: #fc7474;
+  border-bottom: 1px solid transparent;
 
   &::placeholder {
     color: white;
@@ -35,5 +35,6 @@
 
   &:focus {
     outline: none;
+    border-bottom: 1px solid #5a698f;
   }
 }

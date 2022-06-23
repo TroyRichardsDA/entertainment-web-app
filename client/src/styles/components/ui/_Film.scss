@@ -6,10 +6,16 @@
 }
 
 .film__img--wrapper {
+  position: relative;
   margin-right: 16px;
 
   border-radius: 8px;
   overflow: hidden;
+  transition: all 300ms ease;
+
+  &:hover .film__play-btn {
+    opacity: 1;
+  }
 
   &-t {
     width: 240px;
@@ -23,6 +29,38 @@
 .film__img {
   width: 100%;
   object-fit: cover;
+}
+
+.film__play-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+
+  &--wrapper {
+    width: 117px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: no-drop;
+
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 28.5px;
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
 }
 
 .film__bookmark--wrapper {
@@ -40,6 +78,19 @@
 
   background-color: #10141e7b;
   border-radius: 50%;
+  transition: all 400ms ease;
+
+  path {
+    transition: all 900ms ease;
+  }
+
+  &:hover {
+    background-color: white;
+
+    svg > path {
+      stroke: black;
+    }
+  }
 
   &-t {
     left: 218px;
