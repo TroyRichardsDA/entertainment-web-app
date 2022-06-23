@@ -2,11 +2,8 @@
 
 .navbar {
   background-color: #161d2f;
-  position: absolute;
   width: 100%;
   height: 56px;
-  left: 0px;
-  top: 0px;
 }
 
 .navbar__wrapper {
@@ -17,6 +14,10 @@
   padding: 16px;
 }
 
+.navbar__logo {
+  transform: scale(0.85);
+}
+
 .navbar__icons {
   display: flex;
   gap: 24px;
@@ -24,6 +25,7 @@
 
 .navbar__icon {
   cursor: pointer;
+  transform: scale(0.9);
 
   path {
     transition: all 300ms ease;

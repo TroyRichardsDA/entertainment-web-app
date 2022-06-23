@@ -1,0 +1,39 @@
+@use "../../abstracts/variables" as *;
+
+.searchbar {
+  position: relative;
+  margin-top: 24px;
+  height: max-content;
+  width: max-content;
+
+  display: flex;
+  align-items: center;
+}
+
+.searchbar__icon {
+  top: -5px;
+  left: 0;
+
+  transform: scale(0.8);
+}
+
+.searchbar__input {
+  width: 257px;
+  height: 24px;
+  padding-left: 16px;
+  font-family: $baseFont;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: transparent;
+  color: white;
+  border: none;
+
+  &::placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

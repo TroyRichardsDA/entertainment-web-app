@@ -1,7 +1,17 @@
 /* Variables */
+@use "./abstracts/variables";
 
 /* Resets */
 @use "./resets/reset";
 
+/* Base */
+@use "./base/body";
+
 /* components */
 @use "./components/navbar";
+
+/* UI */
+@use "./components/ui/Searchbar";
+
+/* Pages */
+@use "./pages/Home";
