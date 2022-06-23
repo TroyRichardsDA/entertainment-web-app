@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import { Recommended, Trending } from "../components";
+import { FilmsList, Trending } from "../components";
 import { Searchbar, SearchResults } from "../components/UI";
 import { useStateContext } from "../context/ContextProvider";
 
 const Home = () => {
-  const [search, setSearch] = useState("");
   const { films } = useStateContext();
+  const [search, setSearch] = useState("");
+  const notTrending = films.filter((film) => film.isTrending === false);
 
   return (
     <main className="home">
@@ -18,7 +19,10 @@ const Home = () => {
       {!search ? (
         <>
           <Trending />
-          <Recommended />
+          <section className="recommended">
+            <h2 className="section__header">Recommended for you</h2>
+            <FilmsList films={notTrending} />
+          </section>
         </>
       ) : (
         <SearchResults films={films} search={search} />
