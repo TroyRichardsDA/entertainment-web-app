@@ -24,7 +24,7 @@ const Recommended = () => {
   return (
     <section className="recommended">
       <h2 className="section__header">Recommended for you</h2>
-      <div className="recommended__films">{recommendedFilms}</div>
+      <div className="films-display">{recommendedFilms}</div>
     </section>
   );
 };

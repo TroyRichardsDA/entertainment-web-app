@@ -8,6 +8,12 @@
   letter-spacing: -0.3125px;
 }
 
+.films-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
 main {
   padding: 0 16px;
 }

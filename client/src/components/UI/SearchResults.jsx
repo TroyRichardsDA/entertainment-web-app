@@ -1,9 +1,8 @@
 import React from "react";
-import data from "../../data.json";
 import Film from "./Film";
 
-const SearchResults = ({ search }) => {
-  const filteredFilms = data
+const SearchResults = ({ search, films }) => {
+  const filteredFilms = films
     .filter((film) => film.title.toLowerCase().includes(search.toLowerCase()))
     .map((film, ind) => {
       return (

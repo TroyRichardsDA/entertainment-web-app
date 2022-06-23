@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { Recommended, Trending } from "../components";
 import { Searchbar, SearchResults } from "../components/UI";
+import { useStateContext } from "../context/ContextProvider";
 
 const Home = () => {
   const [search, setSearch] = useState("");
+  const { films } = useStateContext();
 
   return (
     <main className="home">
@@ -19,7 +21,7 @@ const Home = () => {
           <Recommended />
         </>
       ) : (
-        <SearchResults search={search} />
+        <SearchResults films={films} search={search} />
       )}
     </main>
   );

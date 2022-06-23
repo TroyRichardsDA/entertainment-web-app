@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import MovieList from "../components/MovieList";
 import { Searchbar, SearchResults } from "../components/UI";
+import { useStateContext } from "../context/ContextProvider";
 
 const Movies = () => {
   const [search, setSearch] = useState("");
+  const { films } = useStateContext();
+  const movies = films.filter((film) => film.category === "Movie");
+
   return (
     <main className="movies">
       {" "}
@@ -12,7 +16,7 @@ const Movies = () => {
         setSearch={setSearch}
         placeholder="Search for movies"
       />
-      <MovieList />
+      <MovieList movies={movies} />
     </main>
   );
 };
