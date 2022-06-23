@@ -1,11 +1,13 @@
 import React from "react";
+import { Trending } from "../components";
 import { Searchbar } from "../components/UI";
 
 const Home = () => {
   return (
-    <div className="home">
+    <main className="home">
       <Searchbar placeholder="Search for movies or TV series" />
-    </div>
+      <Trending />
+    </main>
   );
 };
 
