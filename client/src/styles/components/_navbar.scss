@@ -78,3 +78,32 @@
     width: 32px;
   }
 }
+
+/* 
+
+      Desktop 
+
+*/
+
+@include breakpoint(desktop) {
+  .navbar__wrapper {
+    min-width: 96px;
+    flex-direction: column;
+    justify-content: unset;
+    min-height: 90vh;
+  }
+
+  .navbar__links {
+    flex: 1;
+    flex-direction: column;
+    margin-top: 74px;
+  }
+
+  .navbar__img {
+    width: 40px;
+  }
+
+  .navbar__img--wrapper {
+    max-height: 40px;
+  }
+}

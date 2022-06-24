@@ -1,0 +1,13 @@
+@use "../utils/breakpoints" as *;
+
+/* 
+
+            Desktop
+
+*/
+
+@include breakpoint(desktop) {
+  .app {
+    display: flex;
+  }
+}

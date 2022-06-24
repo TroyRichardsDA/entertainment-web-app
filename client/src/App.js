@@ -5,7 +5,7 @@ import { Bookmarks, Home, Movies, TvSeries } from "./pages";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
