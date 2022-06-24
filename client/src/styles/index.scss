@@ -16,3 +16,6 @@
 @use "./components/ui/Searchbar";
 @use "./components//ui/Film";
 @use "./components/ui/SearchResults";
+
+/* Utils */
+@use "./utils/breakpoints";

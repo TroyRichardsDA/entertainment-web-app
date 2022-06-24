@@ -25,15 +25,17 @@
   background-color: transparent;
   color: white;
   border: none;
-  caret-color: #fc7474;
+  caret-color: $red;
   border-bottom: 1px solid transparent;
+  cursor: pointer;
 
   &::placeholder {
     color: white;
     opacity: 0.5;
   }
 
-  &:focus {
+  &:focus,
+  &:hover {
     outline: none;
     border-bottom: 1px solid #5a698f;
   }
