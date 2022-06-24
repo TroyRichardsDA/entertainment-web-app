@@ -42,3 +42,24 @@ main {
     gap: 29px;
   }
 }
+
+/* 
+
+      Desktop 
+
+*/
+
+@include breakpoint(desktop) {
+  main {
+    padding: unset;
+    margin-left: 164px;
+  }
+
+  section:not(.trending) {
+    padding-right: 36px;
+  }
+
+  .films-display {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

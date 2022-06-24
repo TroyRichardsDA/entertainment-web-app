@@ -46,6 +46,7 @@
 
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
+  transition: all 200ms ease;
 
   &--wrapper {
     width: 117px;
@@ -212,3 +213,9 @@
     }
   }
 }
+
+/* 
+
+    Desktop
+
+*/

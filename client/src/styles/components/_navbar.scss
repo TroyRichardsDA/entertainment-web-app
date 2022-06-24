@@ -86,8 +86,13 @@
 */
 
 @include breakpoint(desktop) {
+  .navbar {
+    position: absolute;
+  }
+
   .navbar__wrapper {
-    min-width: 96px;
+    min-width: unset;
+    max-width: 96px;
     flex-direction: column;
     justify-content: unset;
     min-height: 90vh;
