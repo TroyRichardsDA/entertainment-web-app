@@ -1,4 +1,5 @@
 @use "../../abstracts/variables" as *;
+@use "../../utils/breakpoints" as *;
 
 .searchbar {
   position: relative;
@@ -16,7 +17,6 @@
 
 .searchbar__input {
   width: 257px;
-
   margin-left: 16px;
   padding-bottom: 8px;
   font-family: $baseFont;
@@ -28,6 +28,7 @@
   caret-color: $red;
   border-bottom: 1px solid transparent;
   cursor: pointer;
+  transition: all 300ms ease;
 
   &::placeholder {
     color: white;
@@ -38,5 +39,23 @@
   &:hover {
     outline: none;
     border-bottom: 1px solid #5a698f;
+  }
+}
+
+/* 
+
+      Tablet
+
+*/
+
+@include breakpoint(tablet) {
+  .searchbar__icon {
+    transform: scale(0.9) translateY(-6px);
+  }
+
+  .searchbar__input {
+    width: 321px;
+    font-size: 24px;
+    margin-left: 28px;
   }
 }

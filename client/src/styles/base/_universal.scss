@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../utils/breakpoints" as *;
 
 .section__header {
   margin: 24px 0;
@@ -16,4 +17,16 @@
 
 main {
   padding: 0 16px;
+}
+
+/* 
+
+    Tablet
+
+*/
+
+@include breakpoint(tablet) {
+  main {
+    padding: 0 24px;
+  }
 }
