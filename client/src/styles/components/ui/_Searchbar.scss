@@ -49,6 +49,10 @@
 */
 
 @include breakpoint(tablet) {
+  .searchbar {
+    margin-bottom: 34px;
+  }
+
   .searchbar__icon {
     transform: scale(0.9) translateY(-6px);
   }

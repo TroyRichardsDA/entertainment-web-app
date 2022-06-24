@@ -12,7 +12,7 @@ const Trending = () => {
           title={movie.title}
           year={movie.year}
           rating={movie.rating}
-          src={movie.thumbnail.trending.small}
+          src={movie.thumbnail.trending.large}
           isBookmarked={movie.isBookmarked}
           category={movie.category}
           key={ind}
