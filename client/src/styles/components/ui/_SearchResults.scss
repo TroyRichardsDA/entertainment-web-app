@@ -1,7 +1,32 @@
 @use "../../abstracts/variables" as *;
+@use "../../utils/breakpoints" as *;
 
 .search-results__results {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+/* 
+
+      Tablet
+
+*/
+
+@include breakpoint(tablet) {
+  .search-results__results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 
+
+      Desktop
+
+*/
+
+@include breakpoint(desktop) {
+  .search-results__results {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
