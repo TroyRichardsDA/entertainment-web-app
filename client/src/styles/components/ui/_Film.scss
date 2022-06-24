@@ -133,6 +133,10 @@
   > p {
     font-size: 12px;
   }
+
+  &--r > p {
+    font-size: 11px;
+  }
 }
 
 .film__dot {
@@ -157,6 +161,10 @@
 .film__title {
   font-size: 15px;
   font-weight: 500;
+
+  &--r {
+    font-size: 14px;
+  }
 }
 
 /* 
@@ -186,11 +194,21 @@
     left: 24px;
   }
 
-  .film__stats > p {
-    font-size: 15px;
+  .film__stats {
+    > p {
+      font-size: 15px;
+    }
+
+    &--r > p {
+      font-size: 13px;
+    }
   }
 
   .film__title {
     font-size: 24px;
+
+    &--r {
+      font-size: 18px;
+    }
   }
 }

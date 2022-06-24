@@ -49,7 +49,7 @@ const Film = (props) => {
       </div>
       <div className={`film__content${isTrending ? "--trending" : ""}`}>
         <div className="film__content--wrapper">
-          <div className="film__stats">
+          <div className={`film__stats ${isTrending ? "" : "film__stats--r"}`}>
             <p>{year}</p>
             <div className="film__dot--wrapper">
               <div className="film__dot"></div>
@@ -72,7 +72,9 @@ const Film = (props) => {
             <p>{rating}</p>
           </div>
         </div>
-        <h3 className="film__title">{title}</h3>
+        <h3 className={`film__title ${isTrending ? "" : "film__title--r"}`}>
+          {title}
+        </h3>
       </div>
     </div>
   );
