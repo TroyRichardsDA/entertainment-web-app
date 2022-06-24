@@ -10,9 +10,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { currentPage, changePage } = useStateContext();
-  useEffect(() => {
-    changePage("home");
-  }, []);
 
   return (
     <section className="navbar">
@@ -22,28 +19,28 @@ const Navbar = () => {
           <Link
             className="navbar__link"
             onClick={() => changePage("home")}
-            to="/"
+            to="/entertainment-web-app/"
           >
             <Home className={currentPage.home ? "selected" : ""} />
           </Link>
           <Link
             className="navbar__link"
             onClick={() => changePage("movies")}
-            to="/movies"
+            to="/entertainment-web-app/movies"
           >
             <Movies className={currentPage.movies ? "selected" : ""} />
           </Link>
           <Link
             className="navbar__link"
             onClick={() => changePage("tvSeries")}
-            to="/tvSeries"
+            to="/entertainment-web-app/tvSeries"
           >
             <Tv className={currentPage.tvSeries ? "selected" : ""} />
           </Link>
           <Link
             className="navbar__link"
             onClick={() => changePage("bookmarks")}
-            to="/bookmarks"
+            to="/entertainment-web-app/bookmarks"
           >
             <Bookmark className={currentPage.bookmarks ? "selected" : ""} />
           </Link>
