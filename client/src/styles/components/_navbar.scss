@@ -88,6 +88,7 @@
 @include breakpoint(desktop) {
   .navbar {
     position: absolute;
+    top: 0;
   }
 
   .navbar__wrapper {
