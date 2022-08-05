@@ -39,7 +39,7 @@ main {
 
   .films-display {
     grid-template-columns: repeat(3, 1fr);
-    gap: 29px;
+    gap: 30px;
   }
 }
 
@@ -61,5 +61,6 @@ main {
 
   .films-display {
     grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
   }
 }

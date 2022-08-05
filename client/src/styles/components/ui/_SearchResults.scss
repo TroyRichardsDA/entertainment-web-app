@@ -16,6 +16,7 @@
 @include breakpoint(tablet) {
   .search-results__results {
     grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
@@ -28,5 +29,6 @@
 @include breakpoint(desktop) {
   .search-results__results {
     grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
   }
 }
