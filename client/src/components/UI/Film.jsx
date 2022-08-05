@@ -7,22 +7,10 @@ import { ReactComponent as PlayBtn } from "../../assets/icon-play.svg";
 import { useFilmsContext } from "../../context/FilmsContext";
 
 const Film = (props) => {
-  const { setFilms } = useFilmsContext();
+  const { toggleBookmark } = useFilmsContext();
 
   const { title, year, isTrending, rating, src, isBookmarked, category } =
     props;
-
-  function toggleBookmark() {
-    setFilms((prev) =>
-      prev.map((film) => {
-        if (film.title === title) {
-          return { ...film, isBookmarked: !isBookmarked };
-        } else {
-          return film;
-        }
-      })
-    );
-  }
 
   return (
     <div className="film">
@@ -43,7 +31,7 @@ const Film = (props) => {
         className={`film__bookmark--wrapper film__bookmark--wrapper-${
           isTrending ? "t" : "r"
         }`}
-        onClick={toggleBookmark}
+        onClick={() => toggleBookmark(title)}
       >
         {isBookmarked ? <BookmarkFull /> : <BookmarkEmpty />}
       </div>
