@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { FilmsList } from "../components";
-
 import { Searchbar, SearchResults } from "../components/UI";
-import { useStateContext } from "../context/ContextProvider";
+import { useFilmsContext } from "../context/FilmsContext";
 
 const Bookmarks = () => {
   const [search, setSearch] = useState("");
-  const { films } = useStateContext();
+  const { films } = useFilmsContext();
   const movies = films.filter(
     (film) => film.category === "Movie" && film.isBookmarked
   );

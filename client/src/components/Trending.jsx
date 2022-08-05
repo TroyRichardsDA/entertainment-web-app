@@ -1,9 +1,9 @@
 import React from "react";
-import { useStateContext } from "../context/ContextProvider";
+import { useFilmsContext } from "../context/FilmsContext";
 import { Film } from "./UI";
 
 const Trending = () => {
-  const { films } = useStateContext();
+  const { films } = useFilmsContext();
 
   const trendingFilms = films.map((movie, ind) => {
     if (movie.isTrending) {

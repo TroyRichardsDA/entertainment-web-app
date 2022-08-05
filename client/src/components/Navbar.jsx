@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ReactComponent as Home } from "../assets/icon-nav-home.svg";
 import { ReactComponent as Movies } from "../assets/icon-nav-movies.svg";
 import { ReactComponent as Tv } from "../assets/icon-nav-tv-series.svg";
 import { ReactComponent as Bookmark } from "../assets/icon-nav-bookmark.svg";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import Avatar from "../assets/image-avatar.png";
-import { useStateContext } from "../context/ContextProvider";
 import { Link } from "react-router-dom";
+import { useFilmsContext } from "../context/FilmsContext";
 
 const Navbar = () => {
-  const { currentPage, changePage } = useStateContext();
+  const { currentPage, changePage } = useFilmsContext();
 
   return (
     <section className="navbar">

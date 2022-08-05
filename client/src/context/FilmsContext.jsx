@@ -1,7 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import data from "../data.json";
 
-const StateContext = createContext(null);
+const FilmsContext = createContext(null);
 
 const initialState = {
   home: false,
@@ -10,7 +10,7 @@ const initialState = {
   bookmarks: false,
 };
 
-export const ContextProvider = ({ children }) => {
+export const FilmsContextProvider = ({ children }) => {
   const [films, setFilms] = useState(data);
   const [currentPage, setCurrentPage] = useState(initialState);
 
@@ -18,11 +18,15 @@ export const ContextProvider = ({ children }) => {
     setCurrentPage({ ...initialState, [page]: true });
   }
 
+  useEffect(() => {
+    changePage("home");
+  }, []);
+
   const value = { films, setFilms, changePage, currentPage };
 
   return (
-    <StateContext.Provider value={value}>{children}</StateContext.Provider>
+    <FilmsContext.Provider value={value}>{children}</FilmsContext.Provider>
   );
 };
 
-export const useStateContext = () => useContext(StateContext);
+export const useFilmsContext = () => useContext(FilmsContext);

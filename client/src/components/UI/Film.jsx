@@ -4,10 +4,10 @@ import { ReactComponent as TVIcon } from "../../assets/icon-category-tv.svg";
 import { ReactComponent as BookmarkFull } from "../../assets/icon-bookmark-full.svg";
 import { ReactComponent as BookmarkEmpty } from "../../assets/icon-bookmark-empty.svg";
 import { ReactComponent as PlayBtn } from "../../assets/icon-play.svg";
-import { useStateContext } from "../../context/ContextProvider";
+import { useFilmsContext } from "../../context/FilmsContext";
 
 const Film = (props) => {
-  const { setFilms } = useStateContext();
+  const { setFilms } = useFilmsContext();
 
   const { title, year, isTrending, rating, src, isBookmarked, category } =
     props;
@@ -61,7 +61,6 @@ const Film = (props) => {
                 </>
               ) : (
                 <>
-                  {" "}
                   <TVIcon /> TV Series
                 </>
               )}
