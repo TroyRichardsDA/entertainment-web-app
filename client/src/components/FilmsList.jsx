@@ -1,8 +1,12 @@
 import React from "react";
 import { Film } from "./UI";
+import Skeletons from "./Skeletons";
+import { useFilmsContext } from "../context/FilmsContext";
 
 const FilmsList = (props) => {
   const { films } = props;
+  const { loading } = useFilmsContext();
+
   const displayFilms = films.map((movie, ind) => {
     return (
       <Film
@@ -17,7 +21,15 @@ const FilmsList = (props) => {
     );
   });
 
-  return <div className="films-display">{displayFilms}</div>;
+  return (
+    <>
+      {loading ? (
+        <Skeletons isTrending={false} />
+      ) : (
+        <div className="films-display">{displayFilms}</div>
+      )}
+    </>
+  );
 };
 
 export default FilmsList;

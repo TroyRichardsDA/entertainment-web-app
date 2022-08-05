@@ -4,7 +4,7 @@ import { useFilmsContext } from "../context/FilmsContext";
 
 const Home = () => {
   const { films, search } = useFilmsContext();
-  const notTrending = films.filter((film) => film.isTrending === false);
+  const notTrending = films.filter((film) => !film.isTrending);
 
   return (
     <main className="home">

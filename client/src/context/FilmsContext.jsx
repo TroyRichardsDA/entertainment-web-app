@@ -14,6 +14,7 @@ export const FilmsContextProvider = ({ children }) => {
   const [films, setFilms] = useState(data);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(initialState);
+  const [loading, setLoading] = useState(true);
 
   function changePage(page) {
     setCurrentPage({ ...initialState, [page]: true });
@@ -40,6 +41,14 @@ export const FilmsContextProvider = ({ children }) => {
     changePage("home");
   }, []);
 
+  useEffect(() => {
+    if (films.length > 1) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }
+  }, [films]);
+
   const values = {
     films,
     changePage,
@@ -47,6 +56,7 @@ export const FilmsContextProvider = ({ children }) => {
     search,
     updateSearch,
     toggleBookmark,
+    loading,
   };
 
   return (

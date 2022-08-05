@@ -8,7 +8,6 @@
 
 .film__img--wrapper {
   position: relative;
-  margin-right: 16px;
 
   border-radius: 8px;
   overflow: hidden;
@@ -20,10 +19,12 @@
 
   &-t {
     min-width: 240px;
+    max-height: 116px;
   }
 
   &-r {
     width: 100%;
+    max-height: 106px;
   }
 }
 
@@ -180,6 +181,10 @@
       min-width: 470px;
       max-height: 230px;
     }
+
+    &-r {
+      max-height: 174px;
+    }
   }
 
   .film__bookmark--wrapper {
@@ -213,9 +218,3 @@
     }
   }
 }
-
-/* 
-
-    Desktop
-
-*/

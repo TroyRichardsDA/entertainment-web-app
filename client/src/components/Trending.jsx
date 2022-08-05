@@ -1,9 +1,10 @@
 import React from "react";
 import { useFilmsContext } from "../context/FilmsContext";
+import Skeletons from "./Skeletons";
 import { Film } from "./UI";
 
 const Trending = () => {
-  const { films } = useFilmsContext();
+  const { films, loading } = useFilmsContext();
 
   const trendingFilms = films.map((movie, ind) => {
     if (movie.isTrending) {
@@ -26,7 +27,11 @@ const Trending = () => {
   return (
     <section className="trending">
       <h2 className="section__header">Trending</h2>
-      <div className="trending__slide">{trendingFilms}</div>
+      {loading ? (
+        <Skeletons isTrending={true} />
+      ) : (
+        <div className="trending__slide">{trendingFilms}</div>
+      )}
     </section>
   );
 };
