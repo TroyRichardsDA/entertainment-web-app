@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../utils/breakpoints" as *;
 
 .trending__slide {
   display: flex;
@@ -13,5 +14,17 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: $red;
+  }
+}
+
+/* 
+
+Tablet
+
+*/
+
+@include breakpoint(tablet) {
+  .trending__slide {
+    gap: 40px;
   }
 }
