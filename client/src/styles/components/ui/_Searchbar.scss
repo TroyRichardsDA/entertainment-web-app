@@ -63,3 +63,20 @@
     margin-left: 28px;
   }
 }
+
+/* 
+
+      Desktop
+
+*/
+
+@include breakpoint(desktop) {
+  .searchbar {
+    width: 98%;
+    padding-top: 30px;
+
+    & input {
+      width: 100%;
+    }
+  }
+}
