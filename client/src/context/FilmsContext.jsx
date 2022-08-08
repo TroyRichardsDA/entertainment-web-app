@@ -3,6 +3,8 @@ import data from "../data.json";
 
 const FilmsContext = createContext(null);
 
+export const useFilmsContext = () => useContext(FilmsContext);
+
 const initialState = {
   home: false,
   movies: false,
@@ -63,5 +65,3 @@ export const FilmsContextProvider = ({ children }) => {
     <FilmsContext.Provider value={values}>{children}</FilmsContext.Provider>
   );
 };
-
-export const useFilmsContext = () => useContext(FilmsContext);
