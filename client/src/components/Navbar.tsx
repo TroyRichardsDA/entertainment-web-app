@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as Home } from "../assets/icon-nav-home.svg";
 import { ReactComponent as Movies } from "../assets/icon-nav-movies.svg";
 import { ReactComponent as Tv } from "../assets/icon-nav-tv-series.svg";

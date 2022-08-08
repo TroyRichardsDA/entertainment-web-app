@@ -2,12 +2,17 @@ import React from "react";
 import { Film } from "./UI";
 import Skeletons from "./Skeletons";
 import { useFilmsContext } from "../context/FilmsContext";
+import filmsData from "../models/dataModel";
 
-const FilmsList = (props) => {
+type FilmsListProps = {
+  films: filmsData[];
+};
+
+const FilmsList = (props: FilmsListProps) => {
   const { films } = props;
   const { loading } = useFilmsContext();
 
-  const displayFilms = films.map((movie, ind) => {
+  const displayFilms = films.map((movie: filmsData, ind: number) => {
     return (
       <Film
         title={movie.title}

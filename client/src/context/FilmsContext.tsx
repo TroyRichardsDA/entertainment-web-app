@@ -12,10 +12,17 @@ type FilmsContextProps = {
   children: ReactNode;
 };
 
+type Pages = {
+  home: boolean;
+  movies: boolean;
+  tvSeries: boolean;
+  bookmarks: boolean;
+};
+
 type FilmsContextI = {
   films: filmsData[];
   search: string;
-  currentPage: {};
+  currentPage: Pages;
   loading: boolean;
   changePage: (page: string) => void;
   updateSearch: (input: string) => void;
