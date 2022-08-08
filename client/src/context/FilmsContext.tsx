@@ -1,7 +1,28 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import data from "../data.json";
+import filmsData from "../models/dataModel";
 
-const FilmsContext = createContext(null);
+type FilmsContextProps = {
+  children: ReactNode;
+};
+
+type FilmsContextI = {
+  films: filmsData[];
+  search: string;
+  currentPage: {};
+  loading: boolean;
+  changePage: (page: string) => void;
+  updateSearch: (input: string) => void;
+  toggleBookmark: (title: string) => void;
+};
+
+const FilmsContext = createContext({} as FilmsContextI);
 
 export const useFilmsContext = () => useContext(FilmsContext);
 
@@ -12,22 +33,22 @@ const initialState = {
   bookmarks: false,
 };
 
-export const FilmsContextProvider = ({ children }) => {
-  const [films, setFilms] = useState(data);
+export const FilmsContextProvider = ({ children }: FilmsContextProps) => {
+  const [films, setFilms] = useState<filmsData[]>(data);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(initialState);
   const [loading, setLoading] = useState(true);
 
-  function changePage(page) {
+  function changePage(page: string) {
     setCurrentPage({ ...initialState, [page]: true });
     setSearch("");
   }
 
-  function updateSearch(input) {
+  function updateSearch(input: string) {
     setSearch(input);
   }
 
-  function toggleBookmark(title) {
+  function toggleBookmark(title: string) {
     setFilms((prev) =>
       prev.map((film) => {
         if (film.title === title) {
@@ -53,12 +74,12 @@ export const FilmsContextProvider = ({ children }) => {
 
   const values = {
     films,
-    changePage,
     currentPage,
     search,
+    loading,
+    changePage,
     updateSearch,
     toggleBookmark,
-    loading,
   };
 
   return (

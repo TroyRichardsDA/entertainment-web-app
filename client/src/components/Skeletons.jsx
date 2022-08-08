@@ -1,10 +1,8 @@
-import React from "react";
-import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Skeletons = ({ isTrending }) => {
   const fill = isTrending ? Array(4).fill(0) : Array(24).fill(0);
-
   const skeletons = fill.map((_, ind) => (
     <div className="film" key={ind}>
       <Skeleton
