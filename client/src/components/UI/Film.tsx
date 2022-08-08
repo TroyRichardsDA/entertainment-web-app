@@ -6,7 +6,17 @@ import { ReactComponent as BookmarkEmpty } from "../../assets/icon-bookmark-empt
 import { ReactComponent as PlayBtn } from "../../assets/icon-play.svg";
 import { useFilmsContext } from "../../context/FilmsContext";
 
-const Film = (props) => {
+type FilmProps = {
+  title: string;
+  year: number;
+  isTrending?: boolean;
+  rating: string;
+  src: string | undefined;
+  isBookmarked: boolean;
+  category: string;
+};
+
+const Film = (props: FilmProps) => {
   const { toggleBookmark } = useFilmsContext();
 
   const { title, year, isTrending, rating, src, isBookmarked, category } =

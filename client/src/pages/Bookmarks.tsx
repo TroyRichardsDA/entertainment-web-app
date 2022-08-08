@@ -28,7 +28,7 @@ const Bookmarks = () => {
           </section>
         </>
       ) : (
-        <SearchResults films={bookmarkedFilms} search={search} />
+        <SearchResults films={bookmarkedFilms} />
       )}
     </main>
   );

@@ -16,7 +16,7 @@ const TvSeries = () => {
           <FilmsList films={tvSeries} />
         </section>
       ) : (
-        <SearchResults films={tvSeries} search={search} />
+        <SearchResults films={tvSeries} />
       )}
     </main>
   );

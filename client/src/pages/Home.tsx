@@ -18,7 +18,7 @@ const Home = () => {
           </section>
         </>
       ) : (
-        <SearchResults films={films} search={search} />
+        <SearchResults films={films} />
       )}
     </main>
   );

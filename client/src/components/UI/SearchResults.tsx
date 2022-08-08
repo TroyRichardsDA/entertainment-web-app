@@ -1,7 +1,15 @@
 import React from "react";
 import Film from "./Film";
+import filmsData from "../../models/dataModel";
+import { useFilmsContext } from "../../context/FilmsContext";
 
-const SearchResults = ({ search, films }) => {
+type SearchResultsProps = {
+  films: filmsData[];
+};
+
+const SearchResults = ({ films }: SearchResultsProps) => {
+  const { search } = useFilmsContext();
+
   const filteredFilms = films
     .filter((film) => film.title.toLowerCase().includes(search.toLowerCase()))
     .map((film, ind) => {
@@ -10,7 +18,7 @@ const SearchResults = ({ search, films }) => {
           title={film.title}
           year={film.year}
           rating={film.rating}
-          src={film.thumbnail.regular.small}
+          src={film.thumbnail.regular.large}
           isBookmarked={film.isBookmarked}
           category={film.category}
           key={ind}

@@ -2,7 +2,11 @@ import React from "react";
 import { ReactComponent as SearchIcon } from "../../assets/icon-search.svg";
 import { useFilmsContext } from "../../context/FilmsContext";
 
-const Searchbar = (props) => {
+type SearchbarProps = {
+  placeholder: string;
+};
+
+const Searchbar = (props: SearchbarProps) => {
   const { placeholder } = props;
   const { search, updateSearch } = useFilmsContext();
 
